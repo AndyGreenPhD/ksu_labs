@@ -158,7 +158,7 @@ Once you have initialized the module, follow these steps to deploy the infrastru
 ssh -i <<PATH TO YOUR SSH KEY>> ubuntu@<<PUBLIC IPv4 ADDRESS>>
 ```
 7. From within the SSH session Run `sudo apt-get update`
-8. Run `sudo apt-install net-tools`
+8. Run `sudo apt-get install net-tools`
 9. Refer to the lab assignment available to you in D2L
 
 ### Step 4: Destroying the Infrastructure
