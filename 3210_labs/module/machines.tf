@@ -1,3 +1,10 @@
+data "cloudinit_config" "cloud-config" {
+  part {
+    content_type = "text/cloud-config"
+    content = file("${path.module}/cloud-config.yml")
+  }  
+}
+
 resource "aws_key_pair" "lab" {
   key_name   = "lab-key"
   public_key = var.public_key
@@ -37,6 +44,8 @@ resource "aws_instance" "ubuntu_instance" {
   instance_type = var.instance_type
   key_name      = aws_key_pair.lab.key_name
   vpc_security_group_ids = [aws_security_group.allow_http_https_ssh.id]
+
+  user_data = data.cloudinit_config.cloud-config.rendered
 
   connection {
     type        = "ssh"
