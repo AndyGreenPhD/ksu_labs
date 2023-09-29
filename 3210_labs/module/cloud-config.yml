@@ -2,5 +2,6 @@
 
 packages:
   - net-tools
+  - firewalld
 
 #package_update: true
