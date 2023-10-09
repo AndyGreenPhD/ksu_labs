@@ -3,5 +3,6 @@
 packages:
   - net-tools
   - firewalld
+  - libpam-cracklib
 
 #package_update: true
